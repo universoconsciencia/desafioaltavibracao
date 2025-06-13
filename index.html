@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 21 Dias de Alta Vibração - Transforme sua Vida</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="stars" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="white" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23stars)"/></svg>') repeat;
+            opacity: 0.1;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .urgency-bar {
+            background: #ff6b6b;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-weight: bold;
+            font-size: 1.1em;
+            animation: pulse 2s infinite;
+        }
+        
+        .start-monday-banner {
+            background: linear-gradient(135deg, #ff4757 0%, #ff3838 100%);
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+            position: relative;
+            overflow: hidden;
+            animation: urgentPulse 1.5s infinite;
+            border-top: 3px solid #ffd700;
+            border-bottom: 3px solid #ffd700;
+        }
+        
+        .start-monday-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,215,0,0.1), transparent);
+            animation: shine 2s infinite;
+        }
+        
+        .start-monday-banner h3 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .start-monday-banner p {
+            font-size: 1.3em;
+            font-weight: bold;
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+        
+        @keyframes urgentPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+        }
+        
+        .content {
+            padding: 40px 20px;
+        }
+        
+        .problem-section {
+            background: #f8f9fa;
+            padding: 30px;
+            margin: 30px 0;
+            border-left: 5px solid #ff6b6b;
+            border-radius: 10px;
+        }
+        
+        .problem-section h2 {
+            color: #ff6b6b;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+        }
+        
+        .problem-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .problem-list li {
+            padding: 8px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .problem-list li::before {
+            content: '❌';
+            position: absolute;
+            left: 0;
+            font-size: 1.2em;
+        }
+        
+        .solution-section {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .solution-section h2 {
+            color: #4a90e2;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        
+        .offer-box {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 30px 0;
+            border: 3px solid #4facfe;
+        }
+        
+        .offer-title {
+            text-align: center;
+            color: #4a90e2;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .what-includes {
+            margin: 30px 0;
+        }
+        
+        .what-includes h3 {
+            color: #4a90e2;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            text-align: center;
+        }
+        
+        .includes-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .includes-list li {
+            padding: 12px 0;
+            position: relative;
+            padding-left: 40px;
+            font-size: 1.1em;
+        }
+        
+        .includes-list li::before {
+            content: '✨';
+            position: absolute;
+            left: 0;
+            font-size: 1.3em;
+        }
+        
+        .bonus-section {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .bonus-section h3 {
+            color: #e67e22;
+            text-align: center;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+        
+        .bonus-item {
+            background: white;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .bonus-item h4 {
+            color: #e67e22;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .price-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            margin: 30px 0;
+        }
+        
+        .old-price {
+            font-size: 1.5em;
+            text-decoration: line-through;
+            opacity: 0.7;
+            margin-bottom: 10px;
+        }
+        
+        .new-price {
+            font-size: 3em;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+        
+        .cta-button {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.3em;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
+            margin: 20px 0;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(255, 107, 107, 0.6);
+        }
+        
+        .urgent-cta-button {
+            background: linear-gradient(135deg, #ff3838 0%, #ff6b35 100%);
+            color: white;
+            padding: 25px 50px;
+            font-size: 1.4em;
+            font-weight: bold;
+            border: none;
+            border-radius: 60px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 40px rgba(255, 56, 56, 0.5);
+            margin: 30px 0;
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+            overflow: hidden;
+            animation: buttonPulse 2s infinite;
+        }
+        
+        .urgent-cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: buttonShine 3s infinite;
+        }
+        
+        .urgent-cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(255, 56, 56, 0.7);
+        }
+        
+        @keyframes buttonPulse {
+            0% { box-shadow: 0 15px 40px rgba(255, 56, 56, 0.5); }
+            50% { box-shadow: 0 15px 40px rgba(255, 56, 56, 0.8); }
+            100% { box-shadow: 0 15px 40px rgba(255, 56, 56, 0.5); }
+        }
+        
+        @keyframes buttonShine {
+            0% { left: -100%; }
+            50% { left: 100%; }
+            100% { left: 100%; }
+        }
+        
+        .guarantee {
+            background: #e8f5e8;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+            border: 2px solid #4caf50;
+        }
+        
+        .guarantee h4 {
+            color: #4caf50;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+        
+        .testimonial {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #4facfe;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #4a90e2;
+            margin-top: 15px;
+            font-style: normal;
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
+        
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .new-price {
+                font-size: 2.5em;
+            }
+            
+            .content {
+                padding: 20px 15px;
+            }
+            
+            .start-monday-banner h3 {
+                font-size: 1.5em;
+            }
+            
+            .start-monday-banner p {
+                font-size: 1.1em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Desafio 21 Dias de Alta Vibração</h1>
+            <p>Transforme sua energia e manifeste a vida dos seus sonhos</p>
+        </div>
+        
+        <!-- Urgency Bar -->
+        <div class="urgency-bar">
+            🔥 ÚLTIMAS VAGAS! Oferta por tempo limitado 🔥
+        </div>
+        
+        <!-- Start Monday Banner -->
+        <div class="start-monday-banner">
+            <h3>🚨 COMEÇAMOS SEGUNDA-FEIRA 16/06! 🚨</h3>
+            <p>NÃO PERCA ESSA CHANCE ÚNICA DE TRANSFORMAR SUA VIDA!</p>
+        </div>
+        
+        <!-- Content -->
+        <div class="content">
+            <!-- Problem Section -->
+            <div class="problem-section">
+                <h2>Você está cansada de viver assim?</h2>
+                <ul class="problem-list">
+                    <li>Tudo que você tenta dar errado na sua vida</li>
+                    <li>Não consegue encontrar uma pessoa que preste</li>
+                    <li>O dinheiro que vem nunca fica, vive no aperto</li>
+                    <li>Sente que algo está bloqueando sua vida</li>
+                    <li>Sempre acontece algo ruim: doença, problema, drama</li>
+                    <li>Não tem boas amizades - só pessoas falsas ao redor</li>
+                    <li>Se sente sozinha, frustrada e perdida</li>
+                    <li>Sabe que está vibrando na escassez, culpa, medo e raiva</li>
+                </ul>
+                <p><strong>No fundo você SABE que sua vibração influencia tudo... mas não sabe o que fazer para mudar isso, né?</strong></p>
+            </div>
+            
+            <!-- Solution Section -->
+            <div class="solution-section">
+                <h2>🌟 É hora de quebrar esse ciclo! 🌟</h2>
+                <p style="font-size: 1.2em; margin: 20px 0;">Chegou a hora de elevar sua vibração e começar a atrair tudo que você realmente deseja para sua vida!</p>
+            </div>
+            
+            <!-- Urgent CTA Section -->
+            <div style="text-align: center; margin: 40px 0; padding: 30px; background: linear-gradient(135deg, #ff4757 0%, #ff6b35 100%); border-radius: 20px; color: white;">
+                <h3 style="font-size: 1.8em; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">⏰ INÍCIO NA SEGUNDA 16/06 ⏰</h3>
+                <p style="font-size: 1.2em; margin-bottom: 25px;">Sua transformação começa em poucos dias!</p>
+                <button class="urgent-cta-button">GARANTO MINHA VAGA AGORA</button>
+            </div>
+            
+            <!-- Offer Box -->
+            <div class="offer-box">
+                <h2 class="offer-title">Desafio 21 Dias de Alta Vibração</h2>
+                
+                <div class="what-includes">
+                    <h3>🎁 O que você vai receber:</h3>
+                    <ul class="includes-list">
+                        <li><strong>21 Práticas Diárias Poderosas</strong> - Uma prática diferente a cada dia para elevar sua vibração</li>
+                        <li><strong>Suporte Total no Grupo VIP WhatsApp</strong> - Orientações diárias, esclarecimento de dúvidas e energia do grupo</li>
+                        <li><strong>Acompanhamento Personalizado</strong> - Receba feedback e direcionamento durante toda a jornada</li>
+                        <li><strong>Comunidade de Apoio</strong> - Conecte-se com outras mulheres na mesma transformação</li>
+                    </ul>
+                </div>
+                
+                <!-- Bonus Section -->
+                <div class="bonus-section">
+                    <h3>🎁 BÔNUS EXCLUSIVOS (Valor: R$ 297 - Hoje: R$ 0,00)</h3>
+                    
+                    <div class="bonus-item">
+                        <h4>📖 Caderno da Lei da Atração</h4>
+                        <p>11 técnicas poderosas de manifestação testadas e aprovadas para você aplicar no seu dia a dia</p>
+                    </div>
+                    
+                    <div class="bonus-item">
+                        <h4>🎧 Áudio 1: Limpeza de Crenças Limitantes (Semana 1)</h4>
+                        <p>Reprogramação mental profunda para remover autosabotagem e sentimentos de não merecimento que estão bloqueando sua abundância</p>
+                    </div>
+                    
+                    <div class="bonus-item">
+                        <h4>🎧 Áudio 2: Elevação da Autoestima (Semana 2)</h4>
+                        <p>Fortalecimento da sua confiança interior, amor próprio e poder pessoal para você se sentir merecedora de tudo que deseja</p>
+                    </div>
+                    
+                    <div class="bonus-item">
+                        <h4>🎧 Áudio 3: Manifestação de Vida Plena (Semana 3)</h4>
+                        <p>Programação para atrair prosperidade, saúde perfeita e relacionamentos amorosos em todas as áreas da sua vida</p>
+                    </div>
+                </div>
+                
+                <!-- Testimonials -->
+                <div class="testimonial">
+                    "Minha vida mudou completamente! Em 21 dias consegui sair da depressão, atrair um trabalho incrível e conhecer pessoas verdadeiras. Minha vibração está nas alturas!"
+                    <div class="testimonial-author">- Ana Clara, 32 anos</div>
+                </div>
+                
+                <div class="testimonial">
+                    "Eu estava sempre sem dinheiro e com problemas. Depois do desafio, consegui quitar minhas dívidas e ainda sobrar para investir. A energia mudou total!"
+                    <div class="testimonial-author">- Marina Santos, 28 anos</div>
+                </div>
+                
+                <!-- New Testimonial -->
+                <div class="testimonial">
+                    "Eu não aguentava mais embuste na minha vida amorosa! Sempre caía na lábia de homem sem caráter. Depois do desafio, minha autoestima subiu tanto que atraí um homem de verdade, que me valoriza e me respeita. Agora estou namorando sério e feliz!"
+                    <div class="testimonial-author">- Camila Rodrigues, 29 anos</div>
+                </div>
+                
+                <!-- Price Section -->
+                <div class="price-section">
+                    <div class="old-price">De R$ 197</div>
+                    <div class="new-price">R$ 47</div>
+                    <p style="font-size: 1.2em; margin: 20px 0;">💳 À vista no cartão ou PIX</p>
+                    <button class="cta-button">QUERO TRANSFORMAR MINHA VIDA AGORA</button>
+                </div>
+                
+                <!-- Guarantee -->
+                <div class="guarantee">
+                    <h4>🛡️ Garantia de 7 Dias</h4>
+                    <p>Se por qualquer motivo você não ficar satisfeita, devolvemos 100% do seu dinheiro. Sem perguntas, sem complicação.</p>
+                </div>
+            </div>
+            
+            <!-- Final CTA -->
+            <div style="text-align: center; margin: 40px 0;">
+                <h3 style="color: #4a90e2; margin-bottom: 20px;">Sua nova vida está a apenas 21 dias de distância...</h3>
+                <button class="cta-button">SIM, EU QUERO ELEVAR MINHA VIBRAÇÃO</button>
+                <p style="margin-top: 20px; color: #666;">🔒 Compra 100% segura e protegida</p>
+            </div>
+            
+            <!-- FAQ -->
+            <div style="margin: 40px 0;">
+                <h3 style="color: #4a90e2; text-align: center; margin-bottom: 30px;">Perguntas Frequentes</h3>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                    <h4 style="color: #4a90e2; margin-bottom: 10px;">Como funciona o desafio?</h4>
+                    <p>Durante 21 dias você receberá uma prática diária no grupo do WhatsApp, junto com orientações e suporte completo para elevar sua vibração.</p>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                    <h4 style="color: #4a90e2; margin-bottom: 10px;">Quando recebo os bônus?</h4>
+                    <p>O Caderno da Lei da Atração você recebe imediatamente após a compra. Os áudios de reprogramação são liberados semanalmente conforme o cronograma.</p>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                    <h4 style="color: #4a90e2; margin-bottom: 10px;">Preciso de experiência prévia?</h4>
+                    <p>Não! O desafio foi criado para iniciantes e pessoas que já estudam espiritualidade. Tudo é explicado de forma simples e prática.</p>
+                </div>
+                
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 15px 0;">
+                    <h4 style="color: #4a90e2; margin-bottom: 10px;">E se eu não conseguir acompanhar todos os dias?</h4>
+                    <p>Sem problemas! Você pode fazer no seu ritmo. O importante é a consistência, mesmo que seja adaptando às suas possibilidades.</p>
+                </div>
+            </div>
+            
+            <!-- Final Urgency -->
+            <div style="background: #ff6b6b; color: white; padding: 30px; text-align: center; border-radius: 15px; margin: 40px 0;">
+                <h3 style="margin-bottom: 20px;">⚠️ ATENÇÃO: Esta oferta é por tempo limitado!</h3>
+                <p style="font-size: 1.1em; margin-bottom: 20px;">O preço especial de R$ 47 é válido apenas para as primeiras inscritas. Após o limite de vagas, o valor volta para R$ 197.</p>
+                <button class="cta-button" style="background: white; color: #ff6b6b;">GARANTO MINHA VAGA AGORA</button>
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p>&copy; 2024 - Todos os direitos reservados</p>
+            <p>Esta página é segura e protegida</p>
+        </div>
+    </div>
+
+    <script>
+        // Add click handlers to buttons
+        document.querySelectorAll('.cta-button, .urgent-cta-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Redirect to checkout page
+                window.open('https://pay.cakto.com.br/3c2e53b_433126', '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
